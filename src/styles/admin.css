@@ -1,0 +1,11 @@
+.page {
+    margin-left: 250px;
+    padding: 10px;
+    background-color: #E4E2F5;
+
+}
+
+.page>.inner {
+    padding: 10px;
+    min-height: calc(100vh - 20px);
+}

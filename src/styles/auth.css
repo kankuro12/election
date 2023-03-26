@@ -1,0 +1,19 @@
+.authpage{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background-color: #E6E2F7;
+}
+
+.authpage .loginholder{
+    width:33%;
+    min-height: 300px;
+    border-radius:10px;
+    background-color: #F9F9F9;
+
+}
