@@ -3,7 +3,7 @@ import Front from "../layout/front";
 import AdminLayout from "../layout/admin";
 import AuthRoutes from "./AuthRoutes";
 import AdminDashboard from "../page/admin/dashboard";
-
+adfasd
 
 export default function Router() {
     return useRoutes([
