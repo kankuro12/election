@@ -38,7 +38,7 @@ export default function Login(){
                         </button>
                     </div>
                     <div className="col-md-6">
-                        <Link className="btn btn-success w-100" to={"/auth/register"}>
+                        <Link className="btn btn-success w-100" to={"/register"}>
                             Register
                         </Link>
                     </div>

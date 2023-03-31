@@ -14,9 +14,17 @@ export const initialState = {
 
 
 export const setupLogin = createAsyncThunk('election/setupLogin', async (options) => {
-    // const token = API.getToken();
     // console.log(token, "token");
-    // if (token) {
+    const token = API.getToken();
+    if (token) {
+        const user=JSON.parse( localStorage.getItem('user')??"{}");
+        
+        return { logged: true, user: user };
+
+    }else{
+        return { logged: false, user: null };
+
+    }
     //     try {
     //         const userInfo = await API.get('user');
     //         console.log(userInfo);
@@ -29,7 +37,6 @@ export const setupLogin = createAsyncThunk('election/setupLogin', async (options
     //     }
 
     // } else {
-        return { logged: false, user: null };
     // }
 
 
