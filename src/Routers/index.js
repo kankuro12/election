@@ -8,6 +8,7 @@ import Login from "../page/auth/login.js";
 import Register from "../page/auth/register.js";
 import UserLayout from "../layout/user";
 import UserDashboard from "../page/user/dashboard";
+import AdminVoter from "../page/admin/voter";
 export default function Router() {
     return useRoutes([
         {
@@ -15,7 +16,9 @@ export default function Router() {
             element: <AdminLayout />,
             children: [
                 { path: "index", element: <AdminDashboard /> },
+                { path: "voters/:stat", element: <AdminVoter /> },
                 { path: '', element: <Navigate to="/admin/index" replace={true} /> },
+                { path: 'voters', element: <Navigate to="/admin/voters/0" replace={true} /> },
                 { path: '*', element: <Navigate to="/admin/index" replace={true} /> },
 
             ]
