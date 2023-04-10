@@ -39,7 +39,7 @@ export default function AddCandidate({type,onAdd,canceled}){
                     <div className="col-md-3 pt-3">
                         <div>
 
-                            <button className='btn btn-primary me-2' type="submit">Add Election</button> 
+                            <button className='btn btn-primary me-2' type="submit">Add</button> 
                             <span className='btn btn-danger ' onClick={canceled}>cancel</span>
                         </div>
 
