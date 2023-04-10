@@ -10,6 +10,8 @@ import UserLayout from "../layout/user";
 import UserDashboard from "../page/user/dashboard";
 import AdminVoter from "../page/admin/voter";
 import AdminNotice from "../page/admin/notice";
+import AdminElection from "../page/admin/election";
+import AdminCandidate from "../page/admin/election/candidates";
 export default function Router() {
     return useRoutes([
         {
@@ -18,6 +20,8 @@ export default function Router() {
             children: [
                 { path: "index", element: <AdminDashboard /> },
                 { path: "notices", element: <AdminNotice /> },
+                { path: "elections", element: <AdminElection /> },
+                { path: "candidates/:id", element: <AdminCandidate /> },
                 { path: "voters/:stat", element: <AdminVoter /> },
                 { path: '', element: <Navigate to="/admin/index" replace={true} /> },
                 { path: 'voters', element: <Navigate to="/admin/voters/0" replace={true} /> },

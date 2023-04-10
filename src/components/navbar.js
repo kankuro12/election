@@ -25,7 +25,7 @@ export default function NavBar({role='admin'}){
         admin:[
             {path:"/admin/index",title:"Dashboard",icon:<FaBeer size={30} className="icon"/>,id:1},
             {path:"/admin/voters",title:"Voters",icon:<FaUsers size={30} className="icon"/>,id:2},
-            {path:"/admin/candidates",title:"Candidates",icon:<RiUserVoiceFill  fontSize={30} className="icon"/>,id:3},
+            {path:"/admin/elections",title:"Election",icon:<RiUserVoiceFill  fontSize={30} className="icon"/>,id:3},
             {path:"/admin/notices",title:"Notices",icon:<BiNotepad size={30} className="icon"/>,id:4},
           
         ],
