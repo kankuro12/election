@@ -3,17 +3,32 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { saveAuth } from "../../store/reducer";
 import "../../styles/auth.css";
+import API from "../../api";
 export default function Login(){
     const [ID,setID]=useState("");
     const [password,setPassword]=useState("");
     const dispatch = useDispatch();
     const navigate= useNavigate();
     const login=(e)=>{
+
         e.preventDefault();
-        dispatch(
-            saveAuth()
-        );
-        navigate("/admin/index");
+        API.post('/auth/login',{
+            citizenshipNumber:ID,
+            password:password
+        }).then((data)=>{
+            console.log(data);
+            dispatch(
+                saveAuth(data.userdetails)
+            );
+            API.setToken(data.token);
+            navigate("/admin/index");
+
+        }).catch((err)=>{
+            if(err.response){
+                alert(err.response.data);
+            }
+           console.log(err);
+        })
     }
     return (<div className="authpage">
         <div className="shadow loginholder p-3" >
