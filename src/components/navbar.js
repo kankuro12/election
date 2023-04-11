@@ -31,7 +31,7 @@ export default function NavBar({role='admin'}){
         ],
         user:[
           {path:"/user/index",title:"Dashboard",icon:<FaBeer size={30} className="icon"/>,id:1},
-          {path:"/user/candidates",title:"Candidates",icon:<RiUserVoiceFill  fontSize={30} className="icon"/>,id:3},
+          {path:"/user/elections",title:"Elections",icon:<RiUserVoiceFill  fontSize={30} className="icon"/>,id:3},
           {path:"/user/notices",title:"Notices",icon:<BiNotepad size={30} className="icon"/>,id:4},
       ]
       };

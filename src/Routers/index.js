@@ -14,6 +14,8 @@ import AdminElection from "../page/admin/election";
 import AdminCandidate from "../page/admin/election/candidates";
 import AdminVoterDetail from "../page/admin/voter_detail";
 import UserNotices from "../page/user/notice";
+import UserElection from "../page/user/election";
+import UserVotes from "../page/user/election/vote";
 export default function Router() {
     return useRoutes([
         {
@@ -38,6 +40,8 @@ export default function Router() {
             children: [
                 { path: "index", element: <UserDashboard /> },
                 { path: "notices", element: <UserNotices /> },
+                { path: "elections", element: <UserElection /> },
+                { path: "vote/:id", element: <UserVotes /> },
                 { path: '', element: <Navigate to="/user/index" replace={true} /> },
                 { path: '*', element: <Navigate to="/user/index" replace={true} /> },
 

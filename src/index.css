@@ -28,3 +28,29 @@ label.imageUploader>.imageHolder{
   overflow: hidden;
 
 }
+
+
+.ballot-cross{
+  cursor: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Broken_crossed_circle.svg/768px-Broken_crossed_circle.svg.png'), auto;
+
+  
+}
+
+.ballotholder{
+  position: relative;
+}
+.chap{
+  position: absolute;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.chap img{
+  opacity: 0.3;
+  height: 100%;;
+}
