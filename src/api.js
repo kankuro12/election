@@ -34,7 +34,7 @@ const API = {
         }
     },
     img: (name) => {
-        return `http://localhost:3000/${name}`;
+        return `http://localhost:5000/${name}`;
     },
 
     getToken: () => {

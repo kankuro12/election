@@ -17,11 +17,13 @@ export default function Login(){
             password:password
         }).then((data)=>{
             console.log(data);
+            const details=data.userdetails;
+            details.role=data.role;
             dispatch(
-                saveAuth(data.userdetails)
+                saveAuth(details)
             );
             API.setToken(data.token);
-            navigate("/admin/index");
+            navigate(`/${data.role}/index`);
 
         }).catch((err)=>{
             if(err.response){

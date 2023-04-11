@@ -37,11 +37,19 @@ export default function AdminVoter(){
             name: "Actions",
             button: true,
             cell: (row) => (
+                row.isVerified?
+                <button
+                className="btn btn-sm btn-link"
+                onClick={(e) =>showDetail(row) }
+            >
+                Detail
+            </button>
+                :
                 <button
                     className="btn btn-sm btn-link"
-                    onClick={(e) =>showDetail(row._id) }
+                    onClick={(e) =>verifyUser(row) }
                 >
-                    Detail
+                    Verify
                 </button>
             ),
         }
@@ -49,6 +57,15 @@ export default function AdminVoter(){
 
     const showDetail=(id)=>{
         alert(id);
+    };
+
+    const verifyUser=(voter)=>{
+
+        API.post(`/admin/users/${voter._id}/verifyUser`,{})
+        .then(()=>{
+            SetVoters(voters.map(o=>o._id!=voter._id));
+        })
+        console.log(voter);
     };
     useEffect(()=>{
         console.log(stat);
@@ -74,6 +91,8 @@ export default function AdminVoter(){
                 </div>)
             }
         </div>
+
+
         <div className="my-3 bg-white shadow p-3">
         <DataTable
                         pagination

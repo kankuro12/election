@@ -12,6 +12,8 @@ import AdminVoter from "../page/admin/voter";
 import AdminNotice from "../page/admin/notice";
 import AdminElection from "../page/admin/election";
 import AdminCandidate from "../page/admin/election/candidates";
+import AdminVoterDetail from "../page/admin/voter_detail";
+import UserNotices from "../page/user/notice";
 export default function Router() {
     return useRoutes([
         {
@@ -23,6 +25,7 @@ export default function Router() {
                 { path: "elections", element: <AdminElection /> },
                 { path: "candidates/:id", element: <AdminCandidate /> },
                 { path: "voters/:stat", element: <AdminVoter /> },
+                { path: "voters-detail/:id", element: <AdminVoterDetail /> },
                 { path: '', element: <Navigate to="/admin/index" replace={true} /> },
                 { path: 'voters', element: <Navigate to="/admin/voters/0" replace={true} /> },
                 { path: '*', element: <Navigate to="/admin/index" replace={true} /> },
@@ -34,6 +37,7 @@ export default function Router() {
             element: <UserLayout />,
             children: [
                 { path: "index", element: <UserDashboard /> },
+                { path: "notices", element: <UserNotices /> },
                 { path: '', element: <Navigate to="/user/index" replace={true} /> },
                 { path: '*', element: <Navigate to="/user/index" replace={true} /> },
 

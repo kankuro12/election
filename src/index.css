@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+label.imageUploader{
+  width: 100%;
+  display: block;
+}
+
+label.imageUploader>.imageHolder{
+  height: 100px;
+  border: 1px solid rgba(0,0,0,0.3);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
