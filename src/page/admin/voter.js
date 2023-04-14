@@ -63,7 +63,7 @@ export default function AdminVoter(){
 
         API.post(`/admin/users/${voter._id}/verifyUser`,{})
         .then(()=>{
-            SetVoters(voters.map(o=>o._id!=voter._id));
+            loadData();
         })
         console.log(voter);
     };

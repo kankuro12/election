@@ -34,7 +34,6 @@ export default function Router() {
                 { path: '', element: <Navigate to="/admin/index" replace={true} /> },
                 { path: 'voters', element: <Navigate to="/admin/voters/0" replace={true} /> },
                 { path: '*', element: <Navigate to="/admin/index" replace={true} /> },
-
             ]
         },
         {
