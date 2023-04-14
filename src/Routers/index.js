@@ -16,6 +16,7 @@ import AdminVoterDetail from "../page/admin/voter_detail";
 import UserNotices from "../page/user/notice";
 import UserElection from "../page/user/election";
 import UserVotes from "../page/user/election/vote";
+import CommonResult from "../page/result";
 export default function Router() {
     return useRoutes([
         {
@@ -42,6 +43,7 @@ export default function Router() {
                 { path: "notices", element: <UserNotices /> },
                 { path: "elections", element: <UserElection /> },
                 { path: "vote/:id", element: <UserVotes /> },
+                { path: "result/:id", element: <CommonResult /> },
                 { path: '', element: <Navigate to="/user/index" replace={true} /> },
                 { path: '*', element: <Navigate to="/user/index" replace={true} /> },
 

@@ -28,4 +28,30 @@ const NormalTime = ({dateStr}) => {
     return localDateStr + " " + localTimeStr;
 }
 
-module.exports = { getLocalDate, posts ,NormalTime};
+
+const isDateBetween=(dateToCheck, startDate, endDate)=>{
+    const dateToCheckMs = new Date(dateToCheck).getTime();
+    const startDateMs = new Date(startDate).getTime();
+    const endDateMs = new Date(endDate).getTime();
+    return (dateToCheckMs >= startDateMs && dateToCheckMs <= endDateMs);
+  };
+
+
+  const generateColorScale=(data)=> {
+    const minValue = Math.min(...data.map(item => item.count));
+    const maxValue = Math.max(...data.map(item => item.count));
+    
+    return data.map(item => {
+    const value = item.count;
+    if(value==maxValue){
+        return "rgb(0,255,0)";
+    }else{
+        
+        const r = Math.round(255 * ((value - minValue) / (maxValue - minValue)));
+        const g = Math.round(255 * (1 - (value - minValue) / (maxValue - minValue)));
+        const b = 0;
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+    });
+  }
+module.exports = { getLocalDate, posts ,NormalTime,isDateBetween,generateColorScale};
