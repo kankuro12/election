@@ -8,6 +8,10 @@ export default function AdminNotice() {
 
     // Fetch all notices from the server on component mount
     useEffect(() => {
+        
+    }, []);
+
+    const loadNotice=()=>{
         API.get('/notices')
             .then(data => {
                 setNotices(data);
@@ -15,7 +19,7 @@ export default function AdminNotice() {
             .catch(error => {
                 console.log(error);
             });
-    }, []);
+    }
 
     // Add a new notice to the server
     const addNotice = (event) => {
@@ -23,8 +27,8 @@ export default function AdminNotice() {
         API.post('/notices', { message: newNotice })
             .then(_notices => {
                 console.log(_notices);
-                setNotices([...notices, _notices]);
-                setNewNotice('');
+                loadNotice();
+                newNotice('');
             })
             .catch(error => {
                 console.log(error);

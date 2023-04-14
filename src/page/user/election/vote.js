@@ -67,7 +67,10 @@ export default function UserVotes() {
 
     return (
         <div>
-            <div value={1}>
+            {
+                user.isVerified?
+                <div>
+                     <div value={1}>
                 {posts.map((post, i) =>
                     <div className="shadow mb-3 bg-white" key={i}>
                         <h6 className="d-flex pt-3 ps-3 justify-content-between">
@@ -115,6 +118,14 @@ export default function UserVotes() {
                     Save Ballot
                 </button>
             </div>
+                </div>
+                :<div>
+                    <h5>
+                        You Voter has not been verified yet.
+                    </h5>
+                </div>
+            }
+           
             
         </div>
     );
