@@ -69,7 +69,7 @@ export default function UserElection() {
                                     <h6>
                                         {election.electionName} <br /> 
                                         <Link to={"/user/vote/" + election._id} className="btn btn-primary m-2">Vote Now</Link>
-                                        <Link to={"/user/detail/" + election._id} className="btn btn-primary m-2">View Detail</Link>
+                                        <Link to={"/user/result/" + election._id} className="btn btn-primary m-2">View Result</Link>
                                     </h6>
                                     <span>
                                         <span className="me-2">
