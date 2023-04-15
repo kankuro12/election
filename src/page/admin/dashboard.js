@@ -17,7 +17,7 @@ export default function AdminDashboard() {
         const loadNotice = () => {
                 API.get('/notices')
                         .then(data => {
-                                setNotices([data.slice(-3)]);
+                                setNotices(data.slice(-3));
                         })
                         .catch(error => {
                                 console.log(error);
@@ -28,7 +28,7 @@ export default function AdminDashboard() {
                         {
 
                                 notices.map((notice, i) =>
-                                        <div className="bg-white shadow mb-3 p-3">
+                                        <div key={i} className="bg-white shadow mb-3 p-3">
                                                 {notice.message}
                                                 <div className="text-end">
                                                         <TimeAgo datetime={notice.updatedAt}></TimeAgo>
