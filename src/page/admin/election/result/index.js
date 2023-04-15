@@ -1,12 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import BarChart from './bar_chart';
-import PieChart from './pie_chart';
-import './../admin/election/result/result.css';
-import API from "../../api";
-import { posts } from "../../constants/helper";
-
-export default function CommonResult() {
+import { posts } from "../../../../constants/helper";
+import API from "../../../../api";
+import BarChart from "../../../result/bar_chart";
+import './result.css';
+import PieChart from "../../../result/pie_chart";
+export default function AdminResult() {
     const { id } = useParams();
     const [data, setData] = useState(null);
     const [mode, setmode] = useState(1);

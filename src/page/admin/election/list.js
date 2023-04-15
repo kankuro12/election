@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { getLocalDate } from "../../../constants/helper";
 
-export default function AdminElectionList({elections,onDel,onEdit}){
+export default function AdminElectionList({elections,onDel,onEdit,onPost}){
     return (
     <table className="table table-bordered">
         <thead>
@@ -20,6 +20,11 @@ export default function AdminElectionList({elections,onDel,onEdit}){
                     <td>{getLocalDate(election.endDate).replace('T','  ')}</td>
                     <td>
                         <button className="me-2 btn btn-primary" onClick={()=>{onEdit(election)}}>Edit</button>
+                        {
+
+                            election.posted?"":
+                            <button className="me-2 btn btn-success" onClick={()=>{onPost(election)}}>Post Election</button>
+                        }
                         <button className="me-2 btn btn-danger" onClick={()=>{onDel(election)}}>Del</button>
                         <Link className="me-2 btn btn-success" to={"/admin/candidates/"+election._id}>Manage</Link>
                         <Link className="me-2 btn btn-success" to={"/admin/result/"+election._id}>Result</Link>

@@ -9,9 +9,11 @@ export default function Login(){
     const [password,setPassword]=useState("");
     const dispatch = useDispatch();
     const navigate= useNavigate();
+    const [err,seterr]=useState('');
     const login=(e)=>{
 
         e.preventDefault();
+        seterr('');
         API.post('/auth/login',{
             citizenshipNumber:ID,
             password:password
@@ -28,6 +30,11 @@ export default function Login(){
         }).catch((err)=>{
             if(err.response){
                 alert(err.response.data);
+                seterr(err.response.data);
+
+            }else{
+
+                seterr("Could Not login, please Try again");
             }
            console.log(err);
         })
@@ -36,6 +43,13 @@ export default function Login(){
         <div className="shadow loginholder p-3" >
             <h1 className="text-center">Logo</h1>
             <hr />
+            {
+                err==""?""
+                :<div class="alert alert-danger" role="alert">
+                    {err}
+              </div>
+
+            }
             <form onSubmit={login}>
                 <div className="form-group mb-2">
                     <label >ID</label>

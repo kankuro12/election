@@ -37,6 +37,19 @@ export default function AdminElection(){
         }
       };
 
+      const postElection=(ele)=>{
+            if(confirm("Do you want to post election result, this actions is not ireversible")){
+
+                API.post("/elections/post",{id:ele._id})
+                .then((res)=>{
+                    loadData();
+                })
+                .catch((err)=>{
+    
+                });
+            }
+      }
+
       return (<div>
         <div className="bg-white shadow p-3 mb-3 text-end">
             <button className="btn btn-primary" onClick={()=>{setMode(2)}}>
@@ -47,7 +60,7 @@ export default function AdminElection(){
 
         <Switch test={mode}>
             <div value={1}>
-                <AdminElectionList elections={elections} onEdit={initEdit} onDel={initDel}></AdminElectionList>
+                <AdminElectionList elections={elections} onEdit={initEdit} onDel={initDel} onPost={postElection}></AdminElectionList>
             </div>
             <div value={2}>
                 <AddElection canceled={()=>{setMode(1)}} added={()=>{loadData();setMode(1);}}/>

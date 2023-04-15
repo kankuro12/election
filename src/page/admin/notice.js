@@ -8,7 +8,7 @@ export default function AdminNotice() {
 
     // Fetch all notices from the server on component mount
     useEffect(() => {
-        
+        loadNotice();
     }, []);
 
     const loadNotice=()=>{

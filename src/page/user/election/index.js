@@ -75,7 +75,6 @@ export default function UserElection() {
                                                 <h6>
                                                     {election.electionName} <br />
                                                     <Link to={"/user/vote/" + election._id} className="btn btn-primary m-2">Vote Now</Link>
-                                                    <Link to={"/user/result/" + election._id} className="btn btn-primary m-2">View Result</Link>
                                                 </h6>
                                                 <span>
                                                     <span className="me-2">
@@ -106,7 +105,6 @@ export default function UserElection() {
                                                 <h6>
                                                     {election.electionName} <br />
                                                     <button onClick={() => { viewBallot(election); }} className="btn btn-primary m-2">View Ballot</button>
-                                                    <Link to={"/user/result/" + election._id} className="btn btn-primary m-2">View Result</Link>
                                                 </h6>
                                                 <span>
                                                     <span className="me-2">
