@@ -1,6 +1,6 @@
 import React from 'react';
 import { Chart as ChartJS } from 'chart.js/auto'
-import { Chart,Bar }            from 'react-chartjs-2'
+import { Chart, Bar } from 'react-chartjs-2'
 import { generateColorScale } from '../../constants/helper';
 import styled from 'styled-components';
 
@@ -9,7 +9,7 @@ const BarContainer = styled.div`
   position: relative;
 `;
 
-function BarChart({ data ,type}) {
+function BarChart({ data, type }) {
   const chartData = {
     labels: data.map((item) => item.name),
     datasets: [
@@ -38,15 +38,18 @@ function BarChart({ data ,type}) {
     barThickness: 30,
 
     scales: {
-        y: {
-          precision: 0,
-        },
+      y: {
+        precision: 0,
       },
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+    height: "200px",
   };
 
   return (
     <div>
-      <Bar data={chartData} options={options}  />
+      <Bar data={chartData} options={options} />
     </div>
   );
 }

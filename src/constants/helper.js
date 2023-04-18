@@ -37,21 +37,20 @@ const isDateBetween=(dateToCheck, startDate, endDate)=>{
   };
 
 
-  const generateColorScale=(data)=> {
-    const minValue = Math.min(...data.map(item => item.count));
-    const maxValue = Math.max(...data.map(item => item.count));
-    
-    return data.map(item => {
-    const value = item.count;
-    if(value==maxValue){
-        return "rgb(0,255,0)";
-    }else{
-        
-        const r = Math.round(255 * ((value - minValue) / (maxValue - minValue)));
-        const g = Math.round(255 * (1 - (value - minValue) / (maxValue - minValue)));
-        const b = 0;
-        return `rgb(${r}, ${g}, ${b})`;
+  const generateRandomColor=()=>{
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
     }
-    });
+    return color;
+  }
+
+  const generateColorScale=(data)=> {
+    const colors = [];
+    for (let i = 0; i < data.length; i++) {
+      colors.push(generateRandomColor());
+    }
+    return colors;
   }
 module.exports = { getLocalDate, posts ,NormalTime,isDateBetween,generateColorScale};

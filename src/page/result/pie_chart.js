@@ -16,12 +16,23 @@ export default function PieChart({ ageGroup,title,d="type" }) {
     };
 
 
+    const options={
+        responsive: true,
+        maintainAspectRatio: false,
+        elements: {
+            arc: {
+              radius: "100"
+            }
+          }
+    }
+
+
 
     return (
         <div>
             <h2>{title}</h2>
             <div style={{height:"200px;"}}>
-                <Pie data={data}    options={{ maintainAspectRatio: false }}/>
+                <Pie data={data}    options={options}/>
             </div>
         </div>
     );
